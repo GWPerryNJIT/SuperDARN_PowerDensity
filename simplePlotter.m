@@ -119,7 +119,7 @@ set(colorTitleHandle ,'String',titleString);
 xlabel("Geographic Longitude, ^\circ", 'FontSize', fsz)
 ylabel("Geographic Latitude, ^\circ", 'FontSize', fsz)
         
-legend([p_gc(1)]);
+%legend([p_gc(1)]);
         
 set(h, 'edgecolor', 'none');
 set(gcf, 'InvertHardcopy', 'on');

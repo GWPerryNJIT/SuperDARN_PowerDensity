@@ -27,7 +27,7 @@
 
 for ii=1 %looping through and doing a whole day
 
-general_struct.UT = [2017 08 05 18 35]; % UT - [year month day hour minute]
+general_struct.UT = [2017 08 04 18 59]; % UT - [year month day hour minute]
 general_struct.speed_of_light = 2.99792458e8; % m/s
 general_struct.re = 6376000; 
 general_struct.R12 =15.0;
