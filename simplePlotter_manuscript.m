@@ -62,8 +62,7 @@ function simplePlotter_manuscript(radGrid_O,radGrid_X, dimensions, general_struc
     [lat_grid,lon_grid,alt_grid]=meshgrid(linspace(dimensions.range(1),dimensions.range(2),dimensions.size(1)), ...
         linspace(dimensions.range(3),dimensions.range(4),dimensions.size(2)),linspace(dimensions.range(5),dimensions.range(6),dimensions.size(3)));
     
-    
-    
+   
     %quick hardcoded routine to plot a line showing the great circle path
     %of the center of beam 7
     
@@ -133,9 +132,7 @@ function simplePlotter_manuscript(radGrid_O,radGrid_X, dimensions, general_struc
         shading interp
        
         p_gc=plot(lon_gc,lat_gc,'-m','Linewidth',lw,'DisplayName','Beam 7');
-        %p_gc_l=plot(lon_gc_l,lat_gc_l,'--k','Linewidth',2);
-        %p_gc_r=plot(lon_gc_r,lat_gc_r,'--k','Linewidth',2);
-           
+  
         xlim([-126 -86]);
         ylim([35 75]);
    
@@ -148,16 +145,9 @@ function simplePlotter_manuscript(radGrid_O,radGrid_X, dimensions, general_struc
 
         b = colorbar;
         caxis([-20 -5])
-        %titleString = strrep(['at a Height of SLICE km DATE ' ...
-        %                    'VAR-UT'],'VAR',num2str(num));
+       
         
-       % titleString = strrep(titleString,'SLICE', ...
-                             %num2str(slice));
-       % titleString = strrep(titleString, 'DATE', dateFile);
-       % title({['Modelled SuperDARN Saskatoon Beam 7 Radiation ' ...
-       %         'at 11MHz'], titleString}, 'FontSize', fsz)
-        
-       title({'August 8, 2017 17:25 UT','Modelled Saskatoon SuperDARN at 375 km altitude','Beam 7 Poynting Flux at 11.2 MHz'}, 'FontSize', fsz)       
+        title({'August 8, 2017 17:25 UT','Modelled Saskatoon SuperDARN at 375 km altitude','Beam 7 Poynting Flux at 11.2 MHz'}, 'FontSize', fsz)       
         
         colorTitleHandle = get(b,'Title');
         titleString = 'log_{10}(\mu W/m^{2})';
@@ -178,11 +168,7 @@ function simplePlotter_manuscript(radGrid_O,radGrid_X, dimensions, general_struc
         plot(rri_dat0808.glon(45,1:100:end),rri_dat0808.glat(45,1:100:end),'k','LineWidth',lw);
       %  text(rri_dat0808.glon(45,1)+1,rri_dat0808.glat(45,1),{'Aug. 8'},'FontSize',fsz-9);
 
-        
-     %   xticks(4:10*round(1/spacingLon):dimensions.size(2));
-     %   yticks(4:5*round(1/spacingLat):dimensions.size(1));
-     %   xticklabels(dimensions.range(3):10:dimensions.range(4));
-     %   yticklabels(dimensions.range(1):5:dimensions.range(2));
+       
         xlabel("Geographic Longitude, ^\circ", 'FontSize', fsz)
         ylabel("Geographic Latitude, ^\circ", 'FontSize', fsz)
         
@@ -246,30 +232,9 @@ function simplePlotter_manuscript(radGrid_O,radGrid_X, dimensions, general_struc
         ax_.Box='on';
 
         title({'August 8, 2017 17:25 UT','Modelled Saskatoon SuperDARN at -106^\circ longitude','Beam 7 Poynting Flux at 11.2 MHz'}, 'FontSize', fsz)       
-
-        %titleString = strrep(['at a Height of SLICE km DATE ' ...
-                           % 'VAR-UT'],'VAR',num2str(num));
         
-        %titleString = strrep(titleString,'SLICE', ...
-                             %num2str(slice));
-        %titleString = strrep(titleString, 'DATE', dateFile);
-
-       % colorTitleHandle = get(b,'Title');
-        
-       % titleString = 'log_{10}(\mu W/m^{2})';
-       % set(colorTitleHandle ,'String',titleString);
-
-        
-        %xticks(4:10*round(1/spacingLon):dimensions.size(2));
-        %xticklabels(dimensions.range(3):10:dimensions.range(4));
-        %xlabel("Geographic Longitude, ^\circ", 'FontSize', fsz);
-        
-       % xticks(4:5*round(1/spacingLat):dimensions.size(1));
-       % xticklabels(dimensions.range(1):5:dimensions.range(2));
         xlabel("Geographic Latitude, ^\circ", 'FontSize', fsz);
-       
-       % yticks(4:round(100/spacingAlt):dimensions.size(3));
-       % yticklabels(dimensions.range(5):100:dimensions.range(6))       
+           
         ylabel("Altitude, km", 'FontSize', fsz);
         
         xlim([35 75]);
@@ -309,7 +274,7 @@ function simplePlotter_manuscript(radGrid_O,radGrid_X, dimensions, general_struc
         myfiguresize = [left, bottom, width, height];
         set(gcf,'PaperPosition', myfiguresize);
 
-    %printing the figure out to file
+      %printing the figure out to file
         fn_=strcat('Aug8_SuperDARN_Saskatoon_Beam7_model_elevs_v2_new.png');
         print(fn_,'-dpng','-r300')     
     
@@ -318,9 +283,7 @@ function simplePlotter_manuscript(radGrid_O,radGrid_X, dimensions, general_struc
        % plot(path.lon, path.lat, 'r.')
         hold off
         
-        
-        
-        
+            
        figure(3)
        % clf % clears figure so the figure doesn't pop up and
             % become the focused windowed
@@ -377,19 +340,11 @@ function simplePlotter_manuscript(radGrid_O,radGrid_X, dimensions, general_struc
         yticks(4:5*round(1/spacingLat):dimensions.size(1));
         yticklabels(dimensions.range(1):5:dimensions.range(2));
         ylabel("Geographic Latitude, ^\circ", 'FontSize', fsz);
-       
-        %yticks(4:round(100/spacingAlt):dimensions.size(3));
-        %yticklabels(dimensions.range(5):100:dimensions.range(6));
-        
-        %ylabel("Altitude, km", 'FontSize', fsz);
-        
-        
+               
         set(h, 'edgecolor', 'none');
         set(gcf, 'InvertHardcopy', 'on');
         set(gcf, 'PaperUnits', 'inches');
         set(gcf, 'Color', 'w');
-        
-      %  hold on
-       % plot(path.lon, path.lat, 'r.')
+
         hold off
 

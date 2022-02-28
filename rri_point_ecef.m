@@ -57,14 +57,5 @@ RRI_point_ecef(:,:,ii)=squeeze(RRI_point_rot(:,:,ii))'*[epop_x_u(ii,:);epop_y_u(
 
 end; %ii loop
 
-%RRI_point_ecef=squeeze(RRI_point_ecef(1,1,:));
-
-%to plot the all 3 components of the spacecraft x-axis
-%figure(15)
-%plot(squeeze(RRI_point_ecef(1,1,:)),'r'); hold on;
-%plot(squeeze(RRI_point_ecef(1,2,:)),'b'); 
-%plot(squeeze(RRI_point_ecef(1,3,:)),'g'); 
-
-%grid on
 
 

@@ -92,7 +92,6 @@ alt_bins=linspace(dimensions.range(5),dimensions.range(6),dimensions.spacing(3))
 for i = 1:length(ray)
        
     %calculating power along the rauy 
-    %power_=(powerMultiplier(floor(mod(ray(i).initial_bearing-(21.48),360)) + 1)) .* (ray(i).	ic_distance*1e3).^(-2)/4/pi; %corrected by Gareth 12/17/2020
     power_=(powerMultiplier(floor(mod(ray(i).initial_bearing-(21.48),360)) + 1)) .* (ray(i).group_range*1e3).^(-2)/4/pi; %corrected by Gareth 10/29/2021 (geometric_distance became group_range)
         
     %now accounting for absorption

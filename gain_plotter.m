@@ -26,10 +26,7 @@ pos = get(gcf, 'Position');
 set(gcf, 'Position', [pos(1) pos(2) width*100, height*100],'Visible','on'); %<- Set size
 set(gca, 'FontSize', fsz, 'LineWidth', alw); %<- Set properties
 
-%bears_=deg2rad([359:-1:0]+23.1);
 bears_=deg2rad([0:359]+(23.1));
-
-
 
 for ii=[1:numel(elevs_)]
     start = round(elevs_(ii))+182;
@@ -97,8 +94,6 @@ end
 
 hold off;
 
-%lg2=legend;
-%lg2.Title.String='Bearing Angles';
 set(gca,'FontSize',fsz,'Rcolor','black','ThetaColor','black','GridAlpha',1);
 title(gca,{'Saskatoon SuperDARN Beam 7 Gain Pattern at 11.2 MHz', 'Elevation'});
 
@@ -252,10 +247,7 @@ set(gcf,'PaperPosition', myfiguresize);
 fn_=strcat('SuperDARN_Saskatoon_Beam7_Bearing_112_compare_v2.png');
 print(fn_,'-dpng','-r300')
 
-
-
 %figure 4%
-
 figure(4) %fixed bearing 
 pos = get(gcf, 'Position');
 set(gcf, 'Position', [pos(1) pos(2) width*100, height*100],'Visible','on'); %<- Set size
